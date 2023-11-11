@@ -1,5 +1,5 @@
-import express, { urlencoded } from "express";
 import dotenv from "dotenv";
+import express, { urlencoded } from "express";
 import { connectPassport } from "./utils/Provider.js";
 import session from "express-session";
 import cookieParser from "cookie-parser";
@@ -7,10 +7,10 @@ import { errorMiddleware } from "./middlewares/errormiddleware.js";
 import cors from "cors";
 import passport from "passport";
 
+dotenv.config({path:"./config/config.env"});
 const app=express();
 export default app;
 
-dotenv.config({path:"./config/config.env"});
 //using middlewares
 app.use(session({
     secret:process.env.SESSION_SECRET,

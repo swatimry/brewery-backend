@@ -8,7 +8,8 @@ router.get("/googlelogin",passport.authenticate("google",{
     scope:["profile"],
 }))
 
-router.get("/login",passport.authenticate("google",{
+router.get("/login",passport.authenticate("google",{    
+    
     successRedirect:process.env.FRONT_END_URL
  }));
  
