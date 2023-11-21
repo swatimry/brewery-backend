@@ -29,7 +29,7 @@ export const placeOrder = asyncError(async (req, res, next) => {
   await Order.create(orderoptions);
   res.status(201).json({
     success: true,
-    message: "Order places via COD",
+    message: "Order placed via COD",
   });
 });
 
