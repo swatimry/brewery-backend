@@ -39,7 +39,7 @@ export const getAdminUsers=asyncError(async(req,res,next)=>{
 export const getAdminStats=asyncError(async (req,res,next)=>{
     const usersCount=await User.countDocuments();
     const orders=await Order.find({});
-    const preparingorders=orders.filter((i)=>i.orderStatus==="Preparing");
+    const preparingorders=orders.filter((i)=>i.orderStatus==="Processing");
     const shippedorderes=orders.filter((i)=>i.orderStatus==="Shipped");
     const deliveredorderes=orders.filter((i)=>i.orderStatus==="Delivered");
 
